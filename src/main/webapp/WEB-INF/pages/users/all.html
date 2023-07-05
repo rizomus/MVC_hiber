@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users table</title>
+</head>
+<body>
+Users:
+
+<p></p>
+
+<div th:each="person : ${people}">
+    <a th:href="@{/users/{id}(id=${person.getId()})}"
+       th:text="${person.getName() + ', ' + person.getAge()}">user</a>
+</div>
+
+<br/>
+<hr/>
+
+<a th:href="@{/users/add}"> Add new user </a>
+
+</body>
+</html>
